@@ -37,6 +37,12 @@ All {% data variables.product.prodname_pages %} sites, including sites that are 
 3. Under "{% data variables.product.prodname_pages %}," select **Enforce HTTPS**.
   ![Enforce HTTPS checkbox](/assets/images/help/pages/enforce-https-checkbox.png)
 
+## Troubleshooting certificate provisioning ("certificate not created yet" error)
+
+Once your custom domain is saved on the Pages page, an automatic DNS check should begin. If the check is successful, GitHub's built-in [Certbot](https://certbot.eff.org/) application should automatically begin to request an SSL certificate from [Letsencrypt](https://letsencrypt.org/). Then once the certificate is obtained, you should see the status **Certificate Active**.
+
+The process may take some time. However, if after several hours, this process seems "stuck" between pressing Save and a successful Certificate Active status, try clicking Remove, and then re-entering the custom domain, and once again clicking Save. This will cancel and restart the process.
+
 ## Resolving problems with mixed content
 
 If you enable HTTPS for your {% data variables.product.prodname_pages %} site but your site's HTML still references images, CSS, or JavaScript over HTTP, then your site is serving *mixed content*. Serving mixed content may make your site less secure and cause trouble loading assets.
